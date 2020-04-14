@@ -1,0 +1,84 @@
+@prefix : <https://example.com/Buch-Semantische-Suche/bundestag#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://example.com/Buch-Semantische-Suche/bundestag#> .
+
+:Bundeskanzlerin a rdfs:Class ;
+    rdfs:subClassOf :Regierungsmitglied ;
+    skos:prefLabel "Bundeskanzler",
+        "Bundeskanzlerin" .
+
+:Chef_des_Bundeskanzleramtes a rdfs:Class ;
+    rdfs:subClassOf :Minister ;
+    skos:altLabel "Kanzleramtsminister" ;
+    skos:prefLabel "Chef des Bundeskanzleramtes" .
+
+:Fraktionsvorsitzende a rdfs:Class ;
+    rdfs:subClassOf :Mitglied_des_Bundestags ;
+    skos:altLabel "Fraktionschef" ;
+    skos:prefLabel "Fraktionsvorsitzende" .
+
+:Minister a rdfs:Class ;
+    rdfs:subClassOf :Regierungsmitglied ;
+    skos:prefLabel "Minister" .
+
+:Mitglied_des_Bundestags a rdfs:Class ;
+    rdfs:subClassOf :Rolle ;
+    skos:altLabel "Abgeordnete",
+        "Abgeordneter",
+        "Bundestagsabgeordnete",
+        "Bundestagsabgeordneter",
+        "Bundestagsmitglied" ;
+    skos:hiddenLabel "Bundestags-Abgeordnete",
+        "Bundestags-Abgeordneter" ;
+    skos:prefLabel "Mitglied des Bundestags" .
+
+:Partei a rdfs:Class .
+
+:Person a rdfs:Class .
+
+:Präsident_des_Deutschen_Bundestages a rdfs:Class ;
+    rdfs:subClassOf :Mitglied_des_Bundestags ;
+    skos:altLabel "Bundestagspräsident" ;
+    skos:prefLabel "Präsident des Deutschen Bundestages" .
+
+:Regierungsmitglied a rdfs:Class ;
+    rdfs:subClassOf :Mitglied_des_Bundestags ;
+    skos:altLabel "Mitglied der Regierung" ;
+    skos:prefLabel "Regierungsmitglied" .
+
+:Rolle a rdfs:Class .
+
+:Stellvertretende_Fraktionsvorsitzende a rdfs:Class ;
+    rdfs:subClassOf :Fraktionsvorsitzende ;
+    skos:prefLabel "Stellvertretende Fraktionsvorsitzende" .
+
+:Stellvertreter_des_Bundeskanzlers a rdfs:Class ;
+    rdfs:subClassOf :Minister ;
+    skos:altLabel "Vizekanzler" ;
+    skos:prefLabel "Stellvertreter des Bundeskanzlers" .
+
+:Helge_Braun a :Person ;
+    :ist_Mitglied_in :Christlich_Demokratische_Union ;
+    skos:prefLabel "Dr. Helge Braun" .
+
+:Svenja_Schulze a :Person ;
+    :ist_Mitglied_in :Sozialdemokratische_Partei ;
+    skos:prefLabel "Svenja Schulze" .
+
+:ist_Mitglied_in a rdf:Property ;
+    rdfs:domain :Person .
+
+:Christlich_Demokratische_Union a :Partei ;
+    skos:altLabel "CDU" ;
+    skos:hiddenLabel "Christdemokraten" ;
+    skos:prefLabel "Christlich Demokratische Union" .
+
+:Sozialdemokratische_Partei a :Partei ;
+    skos:altLabel "SPD" ;
+    skos:hiddenLabel "Sozialdemokraten" ;
+    skos:prefLabel "Sozialdemokratische Partei" .
+
